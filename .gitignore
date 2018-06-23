@@ -1,0 +1,9 @@
+$ cat .gitignore
+
+Rpoet.Rproj
+.Rproj.user/
+.Rhistory
+inst/doc
+.Rproj.user
+tests/
+vignettes/
