@@ -47,10 +47,10 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
   uri <- paste(uri, parameter_string, sep = '', collapse = '')
 
   if (stringr::str_sub(uri, start = -2, end = -1) == '//') {
-    uri <- stringr::str_sub(u, start = 1, end = -3)
+    uri <- stringr::str_sub(uri, start = 1, end = -3)
   }
   else if (stringr::str_sub(uri, start = -2, end = -1) == '/') {
-    uri <- stringr::str_sub(u, start = 1, end = -2)
+    uri <- stringr::str_sub(uri, start = 1, end = -2)
   }
 
   if (output_format == 'json' | output_format != 'text') {

@@ -1,14 +1,24 @@
 Package: Rpoet
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: 'PoetryDB' API Wrapper
+Version: 1.0.0
+Author: Aaron Schlegel
+Maintainer: Aaron Schlegel <aaron@aaronschlegel.com>
+Description: 
+  Wrapper for the 'PoetryDB API' <http://poetrydb.org> that allows for interaction and data extraction from the 
+  database in an R interface. The 'PoetryDB API' is a database of poetry and poets implemented with MongoDB to 
+  enable developers and poets to easily access one of the most comprehensive poetry databases currently available.
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr,
-    rmarkdown
+Imports:
+  jsonlite,
+  httr,
+  stringr
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr
+Suggests: R6,
+  httptest,
+  testthat,
+  knitr,
+  rmarkdown
