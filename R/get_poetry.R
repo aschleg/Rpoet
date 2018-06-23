@@ -27,7 +27,11 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
     search_term <- paste(search_term, ':abs', sep = '')
   }
 
-  if (!is.null(output_format) | output_format != '') {
+  if (is.null(output_format)) {
+    output_format <- 'json'
+  }
+
+  else {
     if (!(output_format %in% c('json', 'text', None))) {
       stop("output_format parameter must be one of 'json', 'text', or NULL")
     }
