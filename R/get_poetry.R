@@ -8,7 +8,7 @@
 #' @param output Can be any or a combination of the input terms {'author', 'title', 'lines', 'linecount'}. If NULL, all
 #'   the data returned from PoetryDB by the search will be returned. The output can also be a combination of
 #'   the terms, for example, an output of 'author,title,lines,linecount', will return the same result as if the
-#'   parameter is set to None. An output of 'title,lines', will return the poem's title and text.
+#'   parameter is set to NULL. An output of 'title,lines', will return the poem's title and text.
 #' @param output_format If NULL or 'json', the results are returned in JSON format (the PoetryDB API default). If 'text', the
 #'   results are returned as a parsed string using the [stringr](https://CRAN.R-project.org/package=stringr) package.
 #' @param search_type If NULL (default), the search attempts to match any part of the `input_term`. If 'abs', the search
@@ -28,7 +28,7 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
   }
 
   else {
-    if (!(output_format %in% c('json', 'text', None))) {
+    if (!(output_format %in% c('json', 'text', NULL))) {
       stop("output_format parameter must be one of 'json', 'text', or NULL")
     }
 
