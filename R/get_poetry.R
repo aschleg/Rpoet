@@ -15,10 +15,6 @@
 #'   will attempt to find an exact match when searching for the `input_term`.
 #' @return Search result returned by the PoetryDB API interface in either a JSON-like object or text (depending on what is
 #'   passed in the `output_format`).
-#' @examples
-#' \dontrun{
-#'
-#' }
 #' @export
 get.poetry <- function(input_term, search_term = NULL, output = NULL, output_format = NULL, search_type = NULL) {
   uri <- 'http://poetrydb.org'
