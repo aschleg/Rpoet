@@ -53,17 +53,17 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
     uri <- stringr::str_sub(uri, start = 1, end = -2)
   }
 
-  if (output_format == 'json' | output_format != 'text') {
-    result <- jsonlite::fromJSON(uri,
-                                 flatten = TRUE,
-                                 simplifyVector = TRUE,
-                                 simplifyDataFrame = TRUE,
-                                 simplifyMatrix = TRUE)
-  }
-  else {
-    result <- httr::GET(uri)
-    result <- httr::content(result, 'parsed')
-  }
+  # if (output_format == 'json' | output_format != 'text') {
+  #   result <- jsonlite::fromJSON(uri,
+  #                                flatten = TRUE,
+  #                                simplifyVector = TRUE,
+  #                                simplifyDataFrame = TRUE,
+  #                                simplifyMatrix = TRUE)
+  # }
+  # else {
+  #   result <- httr::GET(uri)
+  #   result <- httr::content(result, 'parsed')
+  # }
 
-  return(result)
+  return(uri)
 }

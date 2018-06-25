@@ -9,5 +9,11 @@ httptest::with_mock_api({
     expect_true('Ambrose Bierce' %in% p$authors)
     expect_true(length(p$authors) >= 129)
 
+    expect_error(get.poetry('author', output_format = 'adfj'),
+                 "output_format parameter must be one of 'json', 'text', or NULL")
+
+
+
+
   })
 })
