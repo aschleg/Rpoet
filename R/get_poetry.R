@@ -20,7 +20,12 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
   uri <- 'http://poetrydb.org'
 
   if (!is.null(search_type) & input_term != 'linecount') {
-    search_term <- paste(search_term, ':abs', sep = '')
+    if (!(search_type %in% c('abs', 'absolute'))) {
+      stop("search_type parameter must be one of 'abs' or 'absolute' for absolute match searches or NULL for broad match searches.")
+    }
+    else {
+      search_term <- paste(search_term, ':abs', sep = '')
+    }
   }
 
   if (is.null(output_format)) {
@@ -29,10 +34,9 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
 
   else {
     if (!(output_format %in% c('json', 'text', NULL))) {
-      stop("output_format parameter must be one of 'json', 'text', or NULL")
+      stop("output_format parameter must be one of 'json', 'text', or NULL.")
     }
-
-    if (!is.null(output_format)) {
+    else {
       output <- paste(output, '.', output_format, sep = '')
     }
   }
@@ -53,17 +57,25 @@ get.poetry <- function(input_term, search_term = NULL, output = NULL, output_for
     uri <- stringr::str_sub(uri, start = 1, end = -2)
   }
 
-  # if (output_format == 'json' | output_format != 'text') {
-  #   result <- jsonlite::fromJSON(uri,
-  #                                flatten = TRUE,
-  #                                simplifyVector = TRUE,
-  #                                simplifyDataFrame = TRUE,
-  #                                simplifyMatrix = TRUE)
-  # }
-  # else {
-  #   result <- httr::GET(uri)
-  #   result <- httr::content(result, 'parsed')
-  # }
+  uri <- gsub(' ', '%20', uri)
 
-  return(uri)
+  if (output_format == 'json' | output_format != 'text') {
+    result <- jsonlite::fromJSON(uri,
+                                 flatten = TRUE,
+                                 simplifyVector = TRUE,
+                                 simplifyDataFrame = TRUE,
+                                 simplifyMatrix = TRUE)
+  }
+  else {
+    uri_get <- httr::GET(uri)
+
+    result <- tryCatch({
+      httr::content(uri_get, 'parsed')
+    },
+    error = function(cond) {
+      httr::content(uri_get, 'text')
+    })
+  }
+
+  return(result)
 }
