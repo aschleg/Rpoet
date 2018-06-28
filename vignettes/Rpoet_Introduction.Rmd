@@ -1,0 +1,106 @@
+---
+title: "Rpoet Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The `Rpoet` package is a wrapper of the [PoetryDB API](http://poetrydb.org), which enables developers and other users to extract a vast amount of English-language poetry from nearly 130 authors (as of this writing). The package provides a simple R interface for interacting and accessing the PoetryDB database. This vignette will introduce the basic functionality of `Rpoet` and some example usages of the package.
+
+## First Steps
+
+If not done already, install `Rpoet` using `install.packages()` function.
+
+```{r, eval=FALSE}
+install.packages('Rpoet')
+```
+
+The latest development version can also be installed using the [devtools](https://CRAN.R-project.org/package=devtools) function `install_github`.
+
+```{r, eval=FALSE}
+devtools::install_github('aschleg/Rpoet')
+```
+
+After `Rpoet` is installed, load it using the `library()` function.
+
+```{r, eval=FALSE}
+library(Rpoet)
+```
+
+## Using Rpoet
+
+The `get.poetry` function acts as the interface to the `PoetryDB` API. The only required parameter in the function is the `input_term`, which must be one or a combination of the following:
+
+* 'author'
+* 'title'
+* 'lines'
+* 'linecount'
+
+The `search_term` parameter should correspond to the given `input_term`. For example, if we are interested in finding the poems and sonnets of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare), we would use the `get.poetry` function like so:
+
+```{r, eval=FALSE}
+get.poetry('author', 'William Shakespeare')
+```
+
+In the case of searching for a particular poem or sonnet:
+
+```{r, eval=FALSE}
+get.poetry('title', 'Paradise Lost')
+```
+
+For users who know of a certain line in a poem and want the full poem:
+
+```{r, eval=FALSE}
+get.poetry('lines', 'But thou contracted to thine own bright eyes,')
+```
+
+### Limiting Returned Results
+
+In the samples given above, all of the data found by the API will be returned. The resulting data returned from the API can be specified by utilizing the `output` parameter. Similar to the `input_term` parameter, `output` can be any one or a combination of 'author', 'title', 'lines' or 'linecount'. For example, the following would return all of Shakespeare's poem titles and linecounts rather than the full returned object.
+
+```{r, eval=FALSE}
+get.poetry('author', 'William Shakespeare', 'title,linecount')
+```
+
+If we only wanted to get the lines of John Milton's [*Paradise Lost*](https://en.wikipedia.org/wiki/Paradise_Lost), the function would look similar to the following:
+
+```{r, eval=FALSE}
+get.poetry('title', 'Paradise Lost', 'lines')
+```
+
+### Combination Searches
+
+Multiple input and search terms can be passed in the `input_term` and `search_term` parameters. Each term passed in the `input_term` parameter must be delimited by a comma, while the terms in the `search_term` parameter should be delimited by a semi-colon. There must be a corresponding search term for each passed input term. For example, let's say we want to find the full title name and the line count of [John Milton's](https://en.wikipedia.org/wiki/John_Milton) poetry with [*Paradise Lost*](https://en.wikipedia.org/wiki/Paradise_Lost) in the title.
+
+```{r, eval=FALSE}
+get.poetry('title,author', 'Paradise Lost;Milton', 'title,linecount')
+```
+
+As another example, let's say we are interested in finding all of William Shakespeare's poems and sonnets that are fourteen lines long (a [sonnet](http://www.english.illinois.edu/maps/sonnet.htm) is a poem of 14 equal length lines).
+
+```{r, eval=FALSE}
+fourteen_lines <- get.poetry('author,linecount', 'William Shakespeare;14', 'title,linecount')
+nrow(fourteen_lines)
+```
+
+## Other Examples
+
+### Getting Available Authors and Titles
+
+A list of authors and titles in the PoetryDB can be found by setting the `input_term` parameter to 'author' or 'title' while keeping the `search_term` parameter `NULL`. In the example below, we see how many authors and poetry titles are currently in `PoetryDB`.
+
+```{r, eval=FALSE}
+authors <- get.poetry('author')
+titles <- get.poetry('title')
+
+print(c(paste('Number of authors:', length(authors$authors), sep = ' '), 
+        paste('Number of titles:', length(titles$titles), sep = ' ')))
+```
+
+We see there are 129 authors and just under 3,000 titles in `PoetryDB` at the time of this writing. Therefore, the average number of poems for each author in the database can be calculated:
+
+```{r, eval=FALSE}
+length(titles$titles) / length(authors$authors)
+```
