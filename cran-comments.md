@@ -1,3 +1,9 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Edited the Description. 'MongoDB' is now quoted in single-quotes and all instances of 'PoetryDB API' 
+  have been changed to 'PoetryDB' API.
+* Added function examples to documentation.
 
 ## Test environments
 * local OS X install, R 3.5.0
