@@ -8,7 +8,13 @@
 
 ## Installation
 
-`Rpoet` is not yet on CRAN, but can be installed with the [devtools](https://CRAN.R-project.org/package=devtools) function `install_github`:
+`Rpoet` is most easily installed through `install.packages`.
+
+~~~ r
+install.packages('Rpoet')
+~~~
+
+The package can also be installed through the `devtools` function `install_github`:
 
 ~~~ r
 devtools::install_github('aschleg/Rpoet')
@@ -16,6 +22,10 @@ devtools::install_github('aschleg/Rpoet')
 
 ## Documentation
 
+* [Rpoet Reference Manual](https://cran.r-project.org/web/packages/Rpoet/Rpoet.pdf)
+  - The API manual as a PDF available on CRAN.
+* [Introduction to Rpoet](https://cran.r-project.org/web/packages/Rpoet/vignettes/Rpoet_Introduction.html)
+  - A short vignette that introduces the primary functionality of the package.
 * [PoetryDB API Documentation](https://github.com/thundercomb/poetrydb/blob/master/README.md) 
   - Includes further information on the design and implementation of the PoetryDB database with MongoDB.
 
