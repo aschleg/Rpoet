@@ -1,7 +1,3 @@
-## Resubmission
-This is a resubmission. In this version I have:
-
-* Edited the Description. Maintainer email is now up to date.
 
 ## Test environments
 * local OS X install, R 3.6.1
