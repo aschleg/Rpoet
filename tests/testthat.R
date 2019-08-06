@@ -1,3 +1,3 @@
 library(testthat)
 
-test_check('Rpoet')
+test_check('Rpoet2')
