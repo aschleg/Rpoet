@@ -4,7 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7tydn9veo15s77a1?svg=true)](https://ci.appveyor.com/project/aschleg/rpoet)
 [![codecov](https://codecov.io/gh/aschleg/Rpoet/branch/master/graph/badge.svg)](https://codecov.io/gh/aschleg/Rpoet)
 
-`Rpoet2` is a wrapper of the [PoetryDB API](poetrydb.org) that enables users to access the PoetryDB through an R interface. 
+`Rpoet2` is a wrapper of the [PoetryDB API](http://poetrydb.org) that enables users to access the PoetryDB through an R interface. 
 
 ## Installation
 
@@ -31,6 +31,6 @@ devtools::install_github('aschleg/Rpoet')
 
 ## About PoetryDB
 
-[PoetryDB](poetrydb.org) was created and is currently maintained by [@thundercomb](https://twitter.com/thundercomb). They blog about poetry and related technology and other topics at [thecombedthunderclap.blogspot.com](http://thecombedthunderclap.blogspot.com/). 
+[PoetryDB](http://poetrydb.org) was created and is currently maintained by [@thundercomb](https://twitter.com/thundercomb). They blog about poetry and related technology and other topics at [thecombedthunderclap.blogspot.com](http://thecombedthunderclap.blogspot.com/). 
 
 Please note, I am in no way affiliated with the creator of PoetryDB. My intention with `Rpoet2` is to help spread the word and hopefully increase interest in poetry and related projects that attempt to create a comprehensive databases of publicly available knowledge.

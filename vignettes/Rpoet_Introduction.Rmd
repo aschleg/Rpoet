@@ -1,8 +1,8 @@
 ---
-title: "Rpoet Introduction"
+title: "Introduction to Rpoet"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Introduction to Rpoet}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
