@@ -2,7 +2,7 @@
 
 This is a resubmission. In this version I have:
 
-* Updated package vignette placeholder title to appropriate title name. 
+* Removed \dontrun{} from examples.
 
 ## Test environments
 * local OS X install, R 3.6.1
