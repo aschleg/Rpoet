@@ -33,7 +33,7 @@ Search result returned by the PoetryDB API interface in either a JSON-like objec
 Primary function for interfacing with the PoetryDB API.
 }
 \examples{
-\dontrun{
+\donttest{
 # Get all of William Shakespeare's poetry by title and lines
 shakespeare <- get.poetry('author', 'William Shakespeare', 'title,lines')
 # Get all ten books of Paradise Lost written by John Milton by linecount and lines

@@ -14,7 +14,7 @@ The `Rpoet` package is a wrapper of the [PoetryDB API](http://poetrydb.org), whi
 If not done already, install `Rpoet` using `install.packages()` function.
 
 ```{r, eval=FALSE}
-install.packages('Rpoet2')
+install.packages('Rpoet')
 ```
 
 The latest development version can also be installed using the [devtools](https://CRAN.R-project.org/package=devtools) function `install_github`.
@@ -26,7 +26,7 @@ devtools::install_github('aschleg/Rpoet')
 After `Rpoet` is installed, load it using the `library()` function.
 
 ```{r, eval=FALSE}
-library(Rpoet2)
+library(Rpoet)
 ```
 
 ## Using Rpoet
