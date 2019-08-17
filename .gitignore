@@ -6,3 +6,4 @@ Rpoet.Rproj
 inst/doc
 .Rproj.user
 .DS_Store
+build/

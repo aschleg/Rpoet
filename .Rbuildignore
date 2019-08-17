@@ -9,3 +9,4 @@
 ^\.gitignore$
 ^\.git$
 ^appveyor\.yml$
+^build/$

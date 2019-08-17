@@ -1,17 +1,17 @@
-# Rpoet2 - R wrapper for the PoetryDB API
+# Rpoet - R wrapper for the PoetryDB API
 
 [![Build Status](https://travis-ci.org/aschleg/Rpoet.svg?branch=master)](https://travis-ci.org/aschleg/Rpoet)
 [![Build status](https://ci.appveyor.com/api/projects/status/7tydn9veo15s77a1?svg=true)](https://ci.appveyor.com/project/aschleg/rpoet)
 [![codecov](https://codecov.io/gh/aschleg/Rpoet/branch/master/graph/badge.svg)](https://codecov.io/gh/aschleg/Rpoet)
 
-`Rpoet2` is a wrapper of the [PoetryDB API](http://poetrydb.org) that enables users to access the PoetryDB through an R interface. 
+`Rpoet` is a wrapper of the [PoetryDB API](http://poetrydb.org) that enables users to access the PoetryDB through an R interface. 
 
 ## Installation
 
-`Rpoet2` is most easily installed through `install.packages`.
+`Rpoet` is most easily installed through `install.packages`.
 
 ~~~ r
-install.packages('Rpoet2')
+install.packages('Rpoet')
 ~~~
 
 The package can also be installed through the `devtools` function `install_github`:
@@ -22,9 +22,9 @@ devtools::install_github('aschleg/Rpoet')
 
 ## Documentation
 
-* Rpoet2 Reference Manual
+* Rpoet Reference Manual
   - The API manual as a PDF available on CRAN.
-* Introduction to Rpoet2
+* Introduction to Rpoet
   - A short vignette that introduces the primary functionality of the package.
 * [PoetryDB API Documentation](https://github.com/thundercomb/poetrydb/blob/master/README.md) 
   - Includes further information on the design and implementation of the PoetryDB database with MongoDB.
