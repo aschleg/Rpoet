@@ -33,4 +33,4 @@ devtools::install_github('aschleg/Rpoet')
 
 [PoetryDB](http://poetrydb.org) was created and is currently maintained by [@thundercomb](https://twitter.com/thundercomb). They blog about poetry and related technology and other topics at [thecombedthunderclap.blogspot.com](http://thecombedthunderclap.blogspot.com/). 
 
-Please note, I am in no way affiliated with the creator of PoetryDB. My intention with `Rpoet2` is to help spread the word and hopefully increase interest in poetry and related projects that attempt to create a comprehensive databases of publicly available knowledge.
+Please note, I am in no way affiliated with the creator of PoetryDB. My intention with `Rpoet` is to help spread the word and hopefully increase interest in poetry and related projects that attempt to create a comprehensive databases of publicly available knowledge.
