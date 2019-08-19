@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/aschleg/Rpoet.svg?branch=master)](https://travis-ci.org/aschleg/Rpoet)
 [![Build status](https://ci.appveyor.com/api/projects/status/7tydn9veo15s77a1?svg=true)](https://ci.appveyor.com/project/aschleg/rpoet)
 [![codecov](https://codecov.io/gh/aschleg/Rpoet/branch/master/graph/badge.svg)](https://codecov.io/gh/aschleg/Rpoet)
+![https://cran.r-project.org/package=Rpoet](https://www.r-pkg.org/badges/version/Rpoet)
 
 `Rpoet` is a wrapper of the [PoetryDB API](http://poetrydb.org) that enables users to access the PoetryDB through an R interface. 
 
@@ -22,9 +23,9 @@ devtools::install_github('aschleg/Rpoet')
 
 ## Documentation
 
-* Rpoet Reference Manual
+* [Rpoet Reference Manual](https://cran.r-project.org/web/packages/Rpoet/Rpoet.pdf)
   - The API manual as a PDF available on CRAN.
-* Introduction to Rpoet
+* [Introduction to Rpoet](https://cran.r-project.org/web/packages/Rpoet/vignettes/Rpoet_Introduction.html)
   - A short vignette that introduces the primary functionality of the package.
 * [PoetryDB API Documentation](https://github.com/thundercomb/poetrydb/blob/master/README.md) 
   - Includes further information on the design and implementation of the PoetryDB database with MongoDB.
